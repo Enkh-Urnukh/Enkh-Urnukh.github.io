@@ -1,0 +1,92 @@
+
+<html>
+    <head>
+        <title>Solar System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        
+         <link type="text/css" rel="stylesheet" href="css/styles.css">
+        
+        <script src = "js/three.js"></script>    
+        
+        <script src = "js/OrbitControls.js"></script> 
+        <script src = "js/threex.spaceships.js"></script> 
+        <script src = "js/MTLLoader.js"></script> 
+        <script src = "js/OBJLoader.js"></script> 
+        <script src = "js/ConvexGeometry.js"></script> 
+        <script src = "js/Fire.js"></script>
+        <script src = "js/FireShader.js"></script>
+  
+        <script src="https://threejs.org/examples/js/controls/TransformControls.js"></script>
+        
+    </head>
+    <body>
+           <div id="menu" class="row" style="width=100vh; height:8vh; border: 2px solid black;">
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="gameBegin(true)">Start</button>
+            </div>
+            <div class="col-md-3">
+                 <button type="button" onclick="alert('Click OK to resume');" class="btn btn-success btn-lg btn-block">Pause</button>
+            </div>
+            <div class="col-md-3">
+                <button type="button" onclick="alert('Use the key A or D to move left/right to choose the answer');"  class="btn btn-secondary btn-lg btn-block">Instructions</button>
+            </div>
+             <div class="col-md-3">
+                <button type="button" onclick="location.href='/solar';" class="btn btn-info btn-lg btn-block">Go Back to Home Page</button>
+            </div>
+        </div>
+        <div id="q" class="row" style="width=100vh; height:8vh; border: 2px solid black;">
+           <div class="level col-md-2">
+               LEVEL:  <span id="level" >
+                
+                </span>
+            </div>
+            <div class="question" class="col-md-8">
+                <span id="question" >
+                
+                </span>
+            </div>
+            <div class="timer col-md-1">
+                <span id="timer">
+                
+                </span>
+            </div>
+            <div class="score col-md-1">
+                <span id="score">
+                
+                </span>
+            </div>
+            
+        </div>
+        <div id="a" class="row" style="width=100vh; height:6vh; border: 2px solid black;">
+            <div class="divAns col-md-3">
+               <kbd> <span class="answers" id="answer1">
+                
+                </span></kbd>
+            </div>
+            <div class="divAns col-md-3">
+               <kbd> <span class="answers" id="answer2">
+                
+                </span></kbd>
+            </div>
+            <div class="divAns col-md-3">
+                <kbd><span class="answers" id="answer3">
+                
+                </span></kbd>
+            </div>
+            <div class="divAns col-md-3">
+              <kbd>  <span class="answers" id="answer4">
+                
+                </span></kbd>
+            </div>
+        </div>
+        
+        
+        <div class="scene" id="threejs" style="width=100vh; height:70vh;">
+        </div>
+   
+    </body> 
+
+</html>
+   <script src = "js/solar_abstract.js"></script>

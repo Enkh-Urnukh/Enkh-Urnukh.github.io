@@ -1,0 +1,49 @@
+body {
+ background-image: url("/solar/u/img/stars.jpg");
+}
+
+.answers{
+    color: white;
+    background-color: black;
+}
+.level{
+    color: white;
+    margin-left: 20px;
+    padding-top: 10px;
+    font-size: 22px;
+}
+.divAns{
+ text-align: center; 
+}
+.question{
+    color: white;
+    font-size: 22px;
+    padding-top: 10px;
+    margin-left: 20px;
+}
+.timer {
+        width: 120px;
+    line-height: 420px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 52px;
+    color: white;
+}
+.distance {
+    text-align: center;
+    font-size: 52px;
+    color: white;
+}
+.score {
+    width: 120px;
+    line-height: 420px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 22px;
+    color: lawngreen;
+}
+
+.span {
+  border: 10px solid #000000 !important;
+  padding: 16px 32px;
+}
