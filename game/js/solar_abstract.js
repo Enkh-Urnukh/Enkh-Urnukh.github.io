@@ -498,7 +498,7 @@ let timer = 10;
        
          let s = 0.02;
         let a;
-        if (comet.position.z <= 0){
+    
             timer -= 0.018;
         document.getElementById("timer").innerHTML=parseInt(timer);
         comet1.position.z += s;
@@ -506,14 +506,13 @@ let timer = 10;
         comet3.position.z += s;
         comet4.position.z += s;
             comet.position.z +=s;
-        }
+
        
-   
+   mars.position.z -= 1;
         
         
     }
-       else 
-           mars.position.z = -10;
+      
       // game=false;
     }//end of gameBegin()
 
