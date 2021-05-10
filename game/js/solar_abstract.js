@@ -507,98 +507,7 @@ let timer = 10;
         comet4.position.z += s;
             comet.position.z +=s;
         }
-        else { 
-          if (comet1.position.y <= spaceship.position.y && spaceship.position.x == -8){
-            a="a";
-             
-              if (a==myQuestions[level]["correctAnswer"]){
-                  if (comet.position.z <=5){
-                  
-                      document.getElementById("score").innerHTML ="CORRECT";
-                      comet1.position.z=100;
-
-                        comet2.position.z += s;
-                        comet3.position.z += s;
-                        comet4.position.z += s;
-                      comet.position.z +=s;
-                      
-                  }
-                  else 
-                    levelDecision(a);
-              }
-              else {
-                   document.getElementById("score").innerHTML ="INCORRECT! GAME OVER";
-                  levelDecision(a);
-              }
-            
-        }
-        else if (comet1.position.y <= spaceship.position.y && spaceship.position.x == -2){
-            a="b";
-             if (a==myQuestions[level]["correctAnswer"]){
-                  if (comet.position.z <=5){
-                   
-                      document.getElementById("score").innerHTML ="CORRECT";
-                      comet2.position.z = 100;
-
-                        comet1.position.z += s;
-                        comet3.position.z += s;
-                        comet4.position.z += s;
-                      comet.position.z +=s;
-                  }
-                  else 
-                    levelDecision(a);
-              }
-              else {
-                   document.getElementById("score").innerHTML ="INCORRECT! GAME OVER";
-                  levelDecision(a);
-              }
-        }
-        else if (comet1.position.y <= spaceship.position.y && spaceship.position.x == 4){
-            a="c";
-             if (a==myQuestions[level]["correctAnswer"]){
-                  if (comet.position.z <= 5){
-                   
-                      document.getElementById("score").innerHTML ="CORRECT";
-                      comet3.position.z =100;
-
-                        comet1.position.z += s;
-                        comet2.position.z += s;
-                        comet4.position.z += s;
-                      comet.position.z +=s;
-                  }
-                  else 
-                    levelDecision(a);
-              }
-              else {
-                 document.getElementById("score").innerHTML ="INCORRECT! GAME OVER";
-                  levelDecision(a);
-              }
-        }
-        else if (comet1.position.y <= spaceship.position.y && spaceship.position.x == 10){
-            a="d";
-             if (a==myQuestions[level]["correctAnswer"]){
-                  if (comet.position.z <=5){
-                
-                      document.getElementById("score").innerHTML ="CORRECT";
-                      comet4.position.z = 100;
-
-                        comet1.position.z += s;
-                        comet2.position.z += s;
-                        comet3.position.z += s;
-                      comet.position.z +=s;
-                  }
-                  else 
-                    levelDecision(a);
-              }
-              else {
-                  document.getElementById("score").innerHTML ="INCORRECT! GAME OVER";
-                  levelDecision(a);
-              }
-            
-        }
-        
-      
-        }
+       
    
         
         
@@ -607,6 +516,8 @@ let timer = 10;
            mars.position.z = -10;
       // game=false;
     }//end of gameBegin()
+
+
     function levelDecision(a){
        timer=10;
         if (a==myQuestions[level]["correctAnswer"]){
