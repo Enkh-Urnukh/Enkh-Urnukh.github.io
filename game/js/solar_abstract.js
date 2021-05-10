@@ -459,7 +459,7 @@ mesh1 = new THREE.Mesh( geometry1, material1 );
         document.addEventListener("keydown", onDocumentKeyDown, true);
         function onDocumentKeyDown(event) {
     var keyCode = event.which;
-    var ship_speed = 1;
+    var ship_speed = 0.1;
     if (comet.position.z <0){
     
     if (keyCode == 65 && spaceship.position.x >-8) {
