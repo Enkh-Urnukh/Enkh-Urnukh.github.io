@@ -460,7 +460,6 @@ mesh1 = new THREE.Mesh( geometry1, material1 );
         function onDocumentKeyDown(event) {
     var keyCode = event.which;
     var ship_speed = 1;
-    if (comet.position.z <0){
     
     if (keyCode == 65 && spaceship.position.x >-8) {
         spaceship.position.x -= ship_speed;
@@ -474,7 +473,7 @@ mesh1 = new THREE.Mesh( geometry1, material1 );
         spaceship.position.y -= ship_speed;
     }
         
-    }
+    
 };
         showAnswers();
  
