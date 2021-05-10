@@ -459,13 +459,19 @@ mesh1 = new THREE.Mesh( geometry1, material1 );
         document.addEventListener("keydown", onDocumentKeyDown, true);
         function onDocumentKeyDown(event) {
     var keyCode = event.which;
-    var ship_speed = 0.1;
+    var ship_speed = 1;
     if (comet.position.z <0){
     
     if (keyCode == 65 && spaceship.position.x >-8) {
         spaceship.position.x -= ship_speed;
     } else if (keyCode == 68 && spaceship.position.x <10) {
         spaceship.position.x += ship_speed;
+    }
+        else if (keyCode == 87) {
+        spaceship.position.y += ship_speed;
+    }
+        else if (keyCode == 83) {
+        spaceship.position.y -= ship_speed;
     }
         
     }
@@ -488,37 +494,7 @@ let timer = 10;
        document.getElementById("score").innerHTML ="";
     if (game1){ 
        
-       if (spaceship.position.x == -8){
-            document.getElementById("answer1").style.backgroundColor="red";
-           document.getElementById("answer2").style.backgroundColor="black";
-           document.getElementById("answer3").style.backgroundColor="black";
-           document.getElementById("answer4").style.backgroundColor="black";
-       }
-       else if (spaceship.position.x == -2){
-            document.getElementById("answer1").style.backgroundColor="black";
-           document.getElementById("answer2").style.backgroundColor="green";
-           document.getElementById("answer3").style.backgroundColor="black";
-           document.getElementById("answer4").style.backgroundColor="black";
-       }
-              else if (spaceship.position.x == 4){
-            document.getElementById("answer1").style.backgroundColor="black";
-           document.getElementById("answer2").style.backgroundColor="black";
-           document.getElementById("answer3").style.backgroundColor="blue";
-           document.getElementById("answer4").style.backgroundColor="black";
-       }
-              else if (spaceship.position.x == 10){
-            document.getElementById("answer1").style.backgroundColor="black";
-           document.getElementById("answer2").style.backgroundColor="black";
-           document.getElementById("answer3").style.backgroundColor="black";
-           document.getElementById("answer4").style.backgroundColor="yellow";
-       }
         
-         document.getElementById("level").innerHTML=level+1;
-        document.getElementById("question").innerHTML=myQuestions[level]["question"];
-        document.getElementById("answer1").innerHTML=myQuestions[level]["answers"]["a"];
-        document.getElementById("answer2").innerHTML=myQuestions[level]["answers"]["b"];
-        document.getElementById("answer3").innerHTML=myQuestions[level]["answers"]["c"];
-        document.getElementById("answer4").innerHTML=myQuestions[level]["answers"]["d"];
        
          let s = 0.02;
         let a;
