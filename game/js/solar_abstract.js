@@ -507,8 +507,7 @@ let timer = 10;
         comet4.position.z += s;
             comet.position.z +=s;
 
-       
-   mars.position.z -= 1;
+    
         
         
     }
@@ -540,6 +539,7 @@ let timer = 10;
         
         
     }
+
     let render = function(){
       //  orbit_setup();
         renderer.render(scene, camera);
