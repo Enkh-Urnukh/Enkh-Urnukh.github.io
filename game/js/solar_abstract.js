@@ -15,6 +15,7 @@ let speed1 = 1; //for showing the speed
     let comet2 = new THREE.Object3D();
     let comet3 = new THREE.Object3D();
     let comet4 = new THREE.Object3D();
+    let bullet = new THREE.Object3D();
     let comet = new THREE.Object3D();
     let mesh_mercury, mesh_venus, mesh_earth, mesh_mars, mesh_jupiter, mesh_saturn, mesh_uranus, mesh_neptune, mesh_moon;
     let orbit_color = 0xff0000;
@@ -33,6 +34,7 @@ let speed1 = 1; //for showing the speed
  let comet2_texture = new THREE.TextureLoader().load( 'img/comet2.jpg' );
  let comet3_texture = new THREE.TextureLoader().load( 'img/comet3.jpg' );
  let comet4_texture = new THREE.TextureLoader().load( 'img/comet4.jpg' );
+let bullet_texture = new THREE.TextureLoader().load( 'img/bullet.png' );
     bg_texture.userData = {
 	    fitTo : 100
     };
@@ -72,109 +74,7 @@ let speed1 = 1; //for showing the speed
 
     }
     //orbits for each planets
-   const myQuestions = [
-  {
-    question: "What is the position of Mars from the Sun?",
-    answers: {
-      a: "First",
-      b: "Second",
-      c: "Third",
-        d: "Fourth"
-    },
-    correctAnswer: "d"
-  },
-  {
-    question: "How many planets are there in the solar system?",
-    answers: {
-      a: "Six",
-      b: "Seven",
-      c: "Eight",
-        d: "Nine"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "Name the closest planet to the Sun",
-    answers: {
-      a: "Jupiter",
-      b: "Mercury",
-      c: "Earth",
-      d: "Venus"
-    },
-    correctAnswer: "b"
-  },
-  {
-    question: "Which actor plays in the film 'Martian'?",
-    answers: {
-      a: "Leonardo DiCaprio",
-      b: "Brad Pitt",
-      c: "Matthew McConaughey",
-      d: "Matt Damon"
-    },
-    correctAnswer: "d"
-  },
-  {
-    question: "Name the first person to reach space",
-    answers: {
-      a: "Buzz Aldrin",
-      b: "Neil Armstrong",
-      c: "Yuri Gagarin",
-      d: "Alan Shepard"
-    },
-    correctAnswer: "c"
-  },
- {
-    question: "Which planet is the hottest in the solar system?",
-    answers: {
-      a: "Earth",
-      b: "Mars",
-      c: "Mercury",
-        d: "Venus"
-    },
-    correctAnswer: "d"
-  },
-  {
-    question: "Which planet has the most number of Moons?",
-    answers: {
-      a: "Jupiter",
-      b: "Uranus",
-      c: "Venus",
-        d: "Mars"
-    },
-    correctAnswer: "a"
-  },
-  {
-    question: "Who was the first man to pee on the moon?",
-    answers: {
-      a: "Neil Armstrong",
-      b: "Buzz Aldrin",
-      c: "Yuri Gagarin",
-      d: "Alan Shepard"
-    },
-    correctAnswer: "b"
-  },
-  {
-    question: "Which movie is not about space?",
-    answers: {
-      a: "Interstellar",
-      b: "Ad Astra",
-      c: "Inception",
-      d: "Gravity"
-    },
-    correctAnswer: "c"
-  },
-  {
-    question: "You're almost there. Last question: Name this planet you're approaching",
-    answers: {
-      a: "Jupiter",
-      b: "Venus",
-      c: "Earth",
-      d: "Mars"
-    },
-    correctAnswer: "d"
-  }
-
-];
+  
 
     //creating solar system
     //orbit size is fixed, which is convenient to look how all the planets move   
@@ -304,9 +204,14 @@ var material4 = new THREE.MeshPhongMaterial( {
     map: comet4_texture, 
     shading: THREE.FlatShading
 } );
+    
+var material5 = new THREE.MeshPhongMaterial( {
+    map: bullet_texture, 
+    shading: THREE.FlatShading
+} );
 
 
-mesh1 = new THREE.Mesh( geometry1, material1 );
+mesh1 = new THREE.Mesh( geometry1, material5 );
 
         
         
