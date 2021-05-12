@@ -372,9 +372,9 @@ mesh1 = new THREE.Mesh( geometry5, material5 );
         else if (keyCode == 87) {
         spaceship.position.y += ship_speed;
         comet1.add(mesh1);
-        comet1.position.x=-8;
-        comet1.position.y=-5;
-        comet1.position.z=-10;
+        comet1.position.x=spaceship.position.x;
+        comet1.position.y=spaceship.position.y;
+        comet1.position.z=spaceship.position.z;
     }
         else if (keyCode == 83) {
         spaceship.position.y -= ship_speed;
@@ -407,7 +407,7 @@ let timer = 10;
     
             timer -= 0.018;
         document.getElementById("timer").innerHTML=parseInt(timer);
-        comet1.position.z += s;
+        comet1.position.z -= s;
         comet2.position.z += s;
         comet3.position.z += s;
         comet4.position.z += s;
