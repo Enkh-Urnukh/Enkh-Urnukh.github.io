@@ -187,7 +187,7 @@ var geometry1 = new THREE.ConvexGeometry( points1 );
 var geometry2 = new THREE.ConvexGeometry( points2 );
 var geometry3 = new THREE.ConvexGeometry( points3 );
 var geometry4 = new THREE.ConvexGeometry( points4 );
-var geometry5 = new THREE.BoxGeometry( 1, 3, 1 );
+var geometry5 = new THREE.BoxGeometry( 0.5, 3, 0.5 );
         
 var material1 = new THREE.MeshPhongMaterial( {
     map: comet1_texture, 
