@@ -5,6 +5,7 @@
 
 let speed1 = 1; //for showing the speed
     let stars = []; //array for stars
+    let comets = [];
     let camera, renderer, sun;
     //objects for planets
     let spaceship = new THREE.Object3D();
@@ -118,10 +119,11 @@ THREEx.SpaceShips.loadSpaceFighter02(function(object3d){
         
        
     }
+
     function showAnswers (){
          geometry = new THREE.CircleGeometry(0.5,40);
         material = new THREE.MeshBasicMaterial();
-        mesh= new THREE.Mesh(geometry, material);
+        //mesh= new THREE.Mesh(geometry, material);
         
            var a = 2;  
 var points1 = [
@@ -187,7 +189,7 @@ var geometry1 = new THREE.ConvexGeometry( points1 );
 var geometry2 = new THREE.ConvexGeometry( points2 );
 var geometry3 = new THREE.ConvexGeometry( points3 );
 var geometry4 = new THREE.ConvexGeometry( points4 );
-var geometry5 = new THREE.BoxGeometry( 0.5, 3, 0.5 );
+var geometry5 = new THREE.BoxGeometry( 0.2, 0.2, 3 );
         
 var material1 = new THREE.MeshPhongMaterial( {
     map: comet1_texture, 
@@ -230,17 +232,23 @@ mesh1 = new THREE.Mesh( geometry5, material5 );
         comet3.position.z=-10;
         comet3.add(mesh3);
         
-        mesh4= new THREE.Mesh(geometry4, material4);
+        mesh4= new THREE.Mesh(geometry3, material2);
         comet4.position.x= 10;
         comet4.position.y=-5;
         comet4.position.z=-10;
         comet4.add(mesh4);
         
-        comet.position.z=-10;
+        //comet.position.z=-10;
+        
+        
         scene.add(comet1);
         scene.add(comet2);
         scene.add(comet3);
         scene.add(comet4);
+        
+     
+        
+         
         
     }
 	// creating stars = not accurate, but just for little decoration
@@ -259,6 +267,42 @@ mesh1 = new THREE.Mesh( geometry5, material5 );
 			stars.push(star); 
 		}
 	}
+
+function addComets(){
+     var a = 2;
+var points4 = [
+   
+    new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a ),
+ new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a ),
+     new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a ),
+     new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a ),
+     new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a ),
+     new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a ),
+     new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a ),
+     new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a ),
+     new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a ),
+     new THREE.Vector3( Math.random() * a,Math.random() * a,Math.random() * a )
+    
+];
+            var material2 = new THREE.MeshPhongMaterial( {
+    map: comet2_texture, 
+    shading: THREE.FlatShading
+} );
+            
+            var geometry2 = new THREE.ConvexGeometry( points4 );
+   
+		  mesh = new THREE.Mesh(geometry2, material2);
+        mesh.position.x=  Math.random()*20-10;
+		    mesh.position.y=-5;
+            mesh.position.z = -10;	
+		    //star.scale.x = star.scale.y = 1;
+        comet.add(mesh);
+        scene.add(mesh);
+          
+    
+	
+	}
+
 	function animateStars() {
 		for(var i=0; i<stars.length; i++) {
 			star = stars[i]; 
@@ -353,7 +397,7 @@ mesh1 = new THREE.Mesh( geometry5, material5 );
         //createComets();
         //orbit_setup(); //creating the orbits
        addStars(); //adding stars
-    
+   // addComets();
         
         
 
@@ -370,20 +414,20 @@ mesh1 = new THREE.Mesh( geometry5, material5 );
         spaceship.position.x += ship_speed;
     }
         else if (keyCode == 87) {
-        spaceship.position.y += ship_speed;
+        //spaceship.position.y += ship_speed;
         comet1.add(mesh1);
         comet1.position.x=spaceship.position.x;
         comet1.position.y=spaceship.position.y;
         comet1.position.z=spaceship.position.z;
     }
         else if (keyCode == 83) {
-        spaceship.position.y -= ship_speed;
+            addComets();
     }
         
     
 };
         showAnswers();
- 
+// addComets();
      
          //   gameBegin(); 
     }//end of function
@@ -397,7 +441,7 @@ let timer = 10;
        
        game=game1;
        console.log(comet.position.z);
-       document.getElementById("score").innerHTML ="";
+       
     if (game1){ 
        
         
@@ -406,8 +450,8 @@ let timer = 10;
         let a;
     
             timer -= 0.018;
-        document.getElementById("timer").innerHTML=parseInt(timer);
-        comet1.position.z -= s;
+        
+        comet1.position.z -= 3;
         comet2.position.z += s;
         comet3.position.z += s;
         comet4.position.z += s;
@@ -458,7 +502,7 @@ let distance = 225;
         if (game){
         let s = 0.01;
       
-        mesh1.rotation.y -= s;
+        //mesh1.rotation.y -= s;
 
         
         mesh2.rotation.y += s;
